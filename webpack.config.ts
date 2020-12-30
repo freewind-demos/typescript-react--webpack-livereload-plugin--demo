@@ -1,6 +1,7 @@
-import { Configuration } from 'webpack';
+import {Configuration} from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
+import WebpackLivereloadPlugin from 'webpack-livereload-plugin';
 
 const config: Configuration = {
   mode: 'development',
@@ -21,7 +22,10 @@ const config: Configuration = {
     }]
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin(),
+    new WebpackLivereloadPlugin({
+      appendScriptTag: true
+    })
   ]
 }
 
